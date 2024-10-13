@@ -19,8 +19,8 @@
     ],
     "baseUrl": "src/",
     "paths": {
-      "@design/*": ["./app/components/design/*"],
-      "@components/*": ["./app/components/*"],
+      "@design/*": ["./components/design/*"],
+      "@components/*": ["./components/*"],
       "@/*": ["./*"]
     }
   },

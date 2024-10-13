@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import Header from "@components/header";
+import "../styles/globals.css";
+import "../styles/design.css";
+import Header from "@/components/header";
+import { ThemeToggler } from "@components/theme-toggler";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,12 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="neon">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased test`}
       >
         <Header />
         {children}
+        <div className="absolute top-2 right-2">
+          <ThemeToggler />
+        </div>
       </body>
     </html>
   );
