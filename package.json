@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.59.13",
+    "@tanstack/react-query-persist-client": "^5.59.13",
+    "cookies-next": "^4.3.0",
+    "idb-keyval": "^6.2.1",
     "next": "14.2.15",
     "next-auth": "^4.24.8",
     "react": "^18",
