@@ -1,11 +1,18 @@
 "use client";
-import { usePostsList } from "@/hooks/api/posts";
-import React from "react";
+import Button from "@design/Button";
+import Flex from "@design/Flex";
+import { useRouter } from "next/navigation";
 
 const DashboardContainer = () => {
-  const { data, isLoading } = usePostsList();
-  console.log("hi", data);
-  return <p>DashboardPage</p>;
+  const router = useRouter();
+
+  return (
+    <Flex vertical>
+      <Button onClick={() => router.push("/dashboard/chart")}>
+        Chart page
+      </Button>
+    </Flex>
+  );
 };
 
 export default DashboardContainer;
