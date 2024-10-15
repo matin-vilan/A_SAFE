@@ -11,9 +11,14 @@ const DashboardContainer = () => {
 
   return (
     <Flex vertical>
-      <Button onClick={() => router.push("/dashboard/chart")}>
-        Chart page
-      </Button>
+      <Flex className="gap-4">
+        <Button onClick={() => router.push("/dashboard/chart")}>
+          Chart page
+        </Button>
+        <Button onClick={() => router.push("/dashboard/large-data")}>
+          Large Data page
+        </Button>
+      </Flex>
       {isLoading ? (
         <div>loading...</div>
       ) : (

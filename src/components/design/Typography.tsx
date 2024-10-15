@@ -7,7 +7,7 @@ const Typography = ({
   variant,
   ...rest
 }: {
-  children?: string;
+  children?: string | number;
   variant?: Variants;
 } & React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLParagraphElement>,
