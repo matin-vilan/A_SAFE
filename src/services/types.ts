@@ -33,3 +33,58 @@ export interface PostsListResponse {
   title: string;
   body: string;
 }
+
+export interface UsersType {
+  cell: string;
+  dob: {
+    age: number;
+    date: Date;
+  };
+  email: string;
+  gender: "male" | "female";
+  id: {
+    name: string;
+    value: string;
+  };
+  location: {
+    city: string;
+    coordinates: {
+      latitude: string;
+      longitude: string;
+    };
+    country: string;
+    postcode: string;
+    state: string;
+  };
+  street: { name: string; number: number };
+  timezone: {
+    description: string;
+    offset: string;
+  };
+  login: {
+    password: string;
+    username: string;
+    uuid: string;
+  };
+  nat: string;
+  phone: string;
+  picture: {
+    large: string;
+    medium: string;
+    thumbnail: string;
+  };
+  registered: {
+    age: number;
+    date: Date;
+  };
+}
+export interface UserListInfo {
+  page: number;
+  results: number;
+  seed: string;
+  version: string;
+}
+export interface UsersListResponse {
+  info: UserListInfo;
+  results: UsersType[];
+}
