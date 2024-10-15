@@ -5,9 +5,14 @@ import { RequestOptions } from "../types";
 // ==================================== request with Authorization header =====================================
 export const authRequest = async (
   url: string,
-  { method = "GET", headers, body, ssr, ...restOptions }: RequestOptions
+  { method = "GET", headers, body, ssr, ...restOptions }: RequestOptions,
+  isLargeData: boolean = false
 ) => {
-  const baseURL = process?.env?.NEXT_PUBLIC_API_URL ?? "";
+  const baseURL =
+    (!isLargeData
+      ? process?.env?.NEXT_PUBLIC_API_URL
+      : process?.env?.NEXT_PUBLIC_USER_API_URL) ?? "";
+
   const reqHeaders = new Headers();
 
   reqHeaders.set("Accept-Language", "en-US");
