@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import "../styles/design.css";
 import Header from "@/components/header";
 import { ThemeToggler } from "@components/theme-toggler";
+import Providers from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,11 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased test`}
       >
-        <Header />
-        {children}
-        <div className="absolute top-2 right-2">
-          <ThemeToggler />
-        </div>
+        <Providers>
+          <Header />
+          {children}
+          <div className="absolute top-2 right-2">
+            <ThemeToggler />
+          </div>
+        </Providers>
       </body>
     </html>
   );
