@@ -1,14 +1,5 @@
-import Flex from "@design/Flex";
-import Button from "@design/Button";
-import Typography from "@design/Typography";
+import HomePageContainer from "@components/pages/home";
 
 export default function Home() {
-  return (
-    <Flex>
-      <div>
-        <Typography variant="description">Hello All!</Typography>
-      </div>
-      <Button>Hello</Button>
-    </Flex>
-  );
+  return <HomePageContainer />;
 }
