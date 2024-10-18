@@ -1,11 +1,9 @@
-import { getCookie } from "cookies-next";
-
 import { RequestOptions } from "../types";
 
 // ==================================== request with Authorization header =====================================
 export const authRequest = async (
   url: string,
-  { method = "GET", headers, body, ssr, ...restOptions }: RequestOptions,
+  { method = "GET", headers, body, ...restOptions }: RequestOptions,
   isLargeData: boolean = false
 ) => {
   const baseURL =

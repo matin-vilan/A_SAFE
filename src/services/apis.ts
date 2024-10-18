@@ -8,7 +8,6 @@ export const postsList = async (
   } & DefaultRequest
 ): Promise<PostsListResponse[]> =>
   await authRequest(`/posts` + toQueryParams(args?.queryParameters), {
-    ssr: args?.ssr,
     headers: args?.headers,
   });
 
@@ -20,7 +19,6 @@ export const usersList = async (
   await authRequest(
     `/` + toQueryParams(args?.queryParameters),
     {
-      ssr: args?.ssr,
       headers: args?.headers,
     },
     true
