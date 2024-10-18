@@ -2,7 +2,6 @@ import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adap
 
 export interface DefaultRequest {
   headers?: Record<string, string>;
-  ssr?: { cookies: () => ReadonlyRequestCookies };
 }
 
 export type RequestOptions = {
