@@ -22,7 +22,8 @@ const DashboardContainer = ({ posts }: { posts: PostsListResponse[] }) => {
         {posts?.map((post) => (
           <div
             key={post.id}
-            className=" flex flex-col rounded-md border border-purple-500 p-4 w-full"
+            className=" flex flex-col rounded-md border border-purple-500 p-4 w-full cursor-pointer hover:border-foreground"
+            onClick={() => router.push("/dashboard/posts/1")}
           >
             <Typography>{`Title : ${post.title}`}</Typography>
             <Typography>{`Body : ${post.body}`}</Typography>
