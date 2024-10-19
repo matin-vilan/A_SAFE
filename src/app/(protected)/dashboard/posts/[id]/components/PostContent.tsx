@@ -1,7 +1,9 @@
+"use client";
 import { PostsListResponse } from "@/services/types";
 import Flex from "@design/Flex";
 import Typography from "@design/Typography";
 import React from "react";
+import BackButton from "./BackButton";
 
 const SinglePostWrapper = ({
   children,
@@ -30,6 +32,7 @@ const PostContent = ({ post }: { post: PostsListResponse }) => {
       <Typography className="w-full text-red-600 py-3" variant="normal">
         THIS IS A <b>SERVER SIDE</b> PAGE
       </Typography>
+      <BackButton />
       <SinglePostWrapper title="Title" content={post.title} />
       <SinglePostWrapper title="User ID" content={post.userId} />
       <SinglePostWrapper title="Content" content={post.body} />

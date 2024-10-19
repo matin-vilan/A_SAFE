@@ -21,6 +21,7 @@ const DashboardContainer = ({ posts }: { posts: PostsListResponse[] }) => {
       <Flex vertical className="w-full gap-4">
         {posts?.map((post) => (
           <div
+            data-test="post-card"
             key={post.id}
             className=" flex flex-col rounded-md border border-purple-500 p-4 w-full cursor-pointer hover:border-foreground"
             onClick={() => router.push("/dashboard/posts/1")}
