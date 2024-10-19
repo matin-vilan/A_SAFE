@@ -1,7 +1,8 @@
 describe("navigation tests", () => {
-  it("shlould ", () => {
+  beforeEach(() => {
     cy.loginUser("dashboard");
-
+  });
+  it("shlould navigating between pages and test functionality", () => {
     cy.get("button")
       .contains(/chart page/i)
       .click();
@@ -33,5 +34,15 @@ describe("navigation tests", () => {
           .invoke("text")
           .should("not.eq", val);
       });
+  });
+
+  it("should navigating to post details page and come back", () => {
+    cy.getDataTest("post-card").first().click();
+
+    cy.location("pathname").should("eq", "/dashboard/posts/1");
+
+    cy.getDataTest("back-button").click();
+
+    cy.location("pathname").should("eq", "/dashboard");
   });
 });
