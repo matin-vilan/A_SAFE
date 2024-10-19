@@ -24,6 +24,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "cypress/tsconfig.json",
+    "cypress/e2e/dashboard.cy.js"
+  ],
   "exclude": ["node_modules"]
 }

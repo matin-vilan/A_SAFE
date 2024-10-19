@@ -1,12 +1,28 @@
 "use client";
 import Button from "@/components/design/Button";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const Header = () => {
+  const { status } = useSession();
+  const router = useRouter();
+  const logout = () => {
+    signOut();
+    router.push("/");
+  };
+  const login = () => {
+    router.push("/api/auth/signin");
+  };
   return (
     <div className="w-full  bg-foreground text-background p-3 flex justify-between items-center">
-      <Button onClick={() => signOut()} variant="danger">
-        logout
-      </Button>
+      {status === "authenticated" ? (
+        <Button onClick={() => logout()} variant="danger">
+          logout
+        </Button>
+      ) : (
+        <Button onClick={() => login()} variant="danger">
+          Login
+        </Button>
+      )}
     </div>
   );
 };

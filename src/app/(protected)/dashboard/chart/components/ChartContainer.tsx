@@ -81,7 +81,7 @@ const ChartContainer = () => {
     <div>loading...</div>
   ) : (
     <div className="p-12">
-      <canvas ref={chartRef} />
+      <canvas data-test="chart" ref={chartRef} />
     </div>
   );
 };
