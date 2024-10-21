@@ -77,3 +77,16 @@ Also, the page is displayed in the URL so that the desired page remains when it 
 For this system, a hook named useSearchParams was defined in the hooks folder
 
 The ability to search in the result can be tested on this page, the result is paginated on the front side
+
+## Task 5: Performance Optimisation
+
+The "home page" and "post list" and "post content" pages are set as a server side and the information is transferred to the page through props
+To test this page, you can go to the setting section through inspect and enable "Disable javascript"
+Then you can still see the content of the page.
+
+## Task 6: Testing
+
+Unit testing for parts of the project was done using react testing library
+Also, end to end testing was done for the project and Cypress was used for this
+
+## Task 7: Documentation

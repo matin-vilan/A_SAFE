@@ -1,3 +1,4 @@
+"use client";
 import Flex from "@design/Flex";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
