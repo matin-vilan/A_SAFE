@@ -3,7 +3,8 @@ import { PostsListResponse } from "@/services/types";
 import Flex from "@design/Flex";
 import Typography from "@design/Typography";
 import React from "react";
-import BackButton from "./BackButton";
+import Button from "@design/Button";
+import Link from "next/link";
 
 const SinglePostWrapper = ({
   children,
@@ -11,8 +12,8 @@ const SinglePostWrapper = ({
   content,
 }: {
   children?: React.ReactNode;
-  title: any;
-  content: any;
+  title: string | number | React.ReactNode;
+  content: string | number | React.ReactNode;
 }) => {
   return (
     <Flex className="flex-col gap-2 justify-start w-full border border-foreground p-4">
@@ -32,7 +33,9 @@ const PostContent = ({ post }: { post: PostsListResponse }) => {
       <Typography className="w-full text-red-600 py-3" variant="normal">
         THIS IS A <b>SERVER SIDE</b> PAGE
       </Typography>
-      <BackButton />
+      <Link href="/dashboard/posts">
+        <Button data-test="back-button">Back</Button>
+      </Link>
       <SinglePostWrapper title="Title" content={post.title} />
       <SinglePostWrapper title="User ID" content={post.userId} />
       <SinglePostWrapper title="Content" content={post.body} />
