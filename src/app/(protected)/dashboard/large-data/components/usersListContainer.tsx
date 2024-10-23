@@ -72,6 +72,7 @@ const UsersListContainer = () => {
     <div className="p-4">
       <div className="py-2">
         <Input
+          data-test="search input"
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search Names ..."
         />

@@ -32,6 +32,7 @@ const Table = ({
                 i === 0 ? (
                   <th
                     key={`row_${h.key}_${i}`}
+                    data-testid={`row_${h.key}_${i}`}
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >

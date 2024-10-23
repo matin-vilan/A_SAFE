@@ -26,6 +26,7 @@ export const ThemeToggler = () => {
       <button
         className="text-xs bg-background text-foreground rounded size-[30px]"
         onClick={handleClick}
+        data-test="theme_toggler"
       >
         {theme === "dark" ? "D" : theme === "neon" ? "N" : "L"}
       </button>

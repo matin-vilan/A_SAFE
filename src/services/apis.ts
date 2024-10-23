@@ -11,6 +11,19 @@ export const postsList = async (
     headers: args?.headers,
   });
 
+export const singlePost = async (
+  args: {
+    queryParameters?: unknown;
+    id: string;
+  } & DefaultRequest
+): Promise<PostsListResponse> =>
+  await authRequest(
+    `/posts/${args.id}` + toQueryParams(args?.queryParameters),
+    {
+      headers: args?.headers,
+    }
+  );
+
 export const usersList = async (
   args?: {
     queryParameters?: { results: number };
