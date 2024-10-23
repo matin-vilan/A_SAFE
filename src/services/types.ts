@@ -87,3 +87,11 @@ export interface UsersListResponse {
   info: UserListInfo;
   results: UsersType[];
 }
+
+export interface GoldPriceResponse {
+  base: string;
+  end_date: string;
+  rates: { [key: string]: { USDXAU: number; XAU: number } };
+  start_date: string;
+  success: boolean;
+}

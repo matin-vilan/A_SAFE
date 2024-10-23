@@ -4,12 +4,17 @@ import { RequestOptions } from "../types";
 export const authRequest = async (
   url: string,
   { method = "GET", headers, body, ...restOptions }: RequestOptions,
-  isLargeData: boolean = false
+  {
+    isLargeData = false,
+    isGoldPrice = false,
+  }: { isLargeData?: boolean; isGoldPrice?: boolean }
 ) => {
-  const baseURL =
-    (!isLargeData
-      ? process?.env?.NEXT_PUBLIC_API_URL
-      : process?.env?.NEXT_PUBLIC_USER_API_URL) ?? "";
+  const baseURL = isLargeData
+    ? process?.env?.NEXT_PUBLIC_USER_API_URL
+    : isGoldPrice
+    ? process.env.NEXT_PUBLIC_GOLD_API_URL
+    : process?.env?.NEXT_PUBLIC_API_URL;
+  console.log({ baseURL, isGoldPrice });
 
   const reqHeaders = new Headers();
 

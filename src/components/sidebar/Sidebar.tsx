@@ -26,6 +26,7 @@ const sidebarItems = [
   { title: "POSTS", link: "posts", id: 1 },
   { title: "LARGE DATA", link: "large-data", id: 2 },
   { title: "CHART", link: "chart", id: 3 },
+  { title: "GOLD CHART", link: "gold", id: 4 },
 ];
 const Sidebar = () => {
   return (
