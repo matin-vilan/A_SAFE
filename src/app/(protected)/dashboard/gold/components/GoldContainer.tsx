@@ -46,10 +46,9 @@ const GoldContainer = () => {
           ],
         };
 
-        const options: Chart.ChartOptions = {
+        const options = {
           responsive: true,
           // scales: {
-          //   // @ts-ignore
           //   y: {
           //     suggestedMin: 0,
           //     suggestedMax: 20,
@@ -64,7 +63,6 @@ const GoldContainer = () => {
         chartInstanceRef.current = new Chart(ctx, {
           type: "line",
           data,
-          // @ts-ignore
           options,
         });
       }

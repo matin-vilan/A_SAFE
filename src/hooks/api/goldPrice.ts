@@ -1,6 +1,5 @@
 import { formatDate } from "@/libs/formatters";
 import { goldPrices } from "@/services/apis";
-import { toQueryParams } from "@/services/utils/helpers/general";
 import { useQuery } from "@tanstack/react-query";
 import { DateValueType } from "react-tailwindcss-datepicker";
 

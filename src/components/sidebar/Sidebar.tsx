@@ -15,6 +15,7 @@ const SidebarItem = ({ title, link }: { title: string; link: string }) => {
           "p-4 border-foreground hover:border-background text-foreground hover:text-background hover:bg-foreground w-full",
           pathname.includes(link) ? "bg-foreground text-background" : ""
         )}
+        data-test={title}
       >
         {title}
       </Flex>
