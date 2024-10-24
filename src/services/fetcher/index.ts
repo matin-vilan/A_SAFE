@@ -9,11 +9,12 @@ export const authRequest = async (
     isGoldPrice = false,
   }: { isLargeData?: boolean; isGoldPrice?: boolean }
 ) => {
-  const baseURL = isLargeData
-    ? process?.env?.NEXT_PUBLIC_USER_API_URL
-    : isGoldPrice
-    ? process.env.NEXT_PUBLIC_GOLD_API_URL
-    : process?.env?.NEXT_PUBLIC_API_URL;
+  const baseURL =
+    (isLargeData
+      ? process?.env?.NEXT_PUBLIC_USER_API_URL
+      : isGoldPrice
+      ? process.env.NEXT_PUBLIC_GOLD_API_URL
+      : process?.env?.NEXT_PUBLIC_API_URL) || "http://localhost:3000";
 
   const reqHeaders = new Headers();
 
