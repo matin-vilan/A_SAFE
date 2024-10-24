@@ -14,7 +14,6 @@ export const authRequest = async (
     : isGoldPrice
     ? process.env.NEXT_PUBLIC_GOLD_API_URL
     : process?.env?.NEXT_PUBLIC_API_URL;
-  console.log({ baseURL, isGoldPrice });
 
   const reqHeaders = new Headers();
 
