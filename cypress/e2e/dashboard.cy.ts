@@ -1,25 +1,19 @@
 describe("navigation tests", () => {
   beforeEach(() => {
-    cy.loginUser("dashboard");
+    cy.loginUser("dashboard/posts");
   });
   it("shlould navigating between pages and test functionality", () => {
-    cy.get("button")
-      .contains(/chart page/i)
-      .click();
+    cy.getDataTest("CHART").should("be.visible");
 
-    cy.getDataTest("chart").should("be.visible");
+    cy.getDataTest("CHART").click();
 
     cy.get("button")
       .contains(/go back/i)
       .click();
 
-    cy.get("button")
-      .contains(/large data page/i)
-      .should("be.visible");
+    cy.getDataTest("LARGE DATA").should("be.visible");
 
-    cy.get("button")
-      .contains(/large data page/i)
-      .click();
+    cy.getDataTest("LARGE DATA").click();
 
     cy.getDataTest("search input").type("SID");
 
@@ -34,15 +28,23 @@ describe("navigation tests", () => {
           .invoke("text")
           .should("not.eq", val);
       });
+
+    cy.get("button")
+      .contains(/go back/i)
+      .click();
+
+    cy.location().should((loc) => {
+      expect(loc.pathname).eq("/dashboard/posts");
+    });
   });
 
   it("should navigating to post details page and come back", () => {
-    cy.getDataTest("post-card").first().click();
+    cy.getDataTest("post-card-1").click();
 
     cy.location("pathname").should("eq", "/dashboard/posts/1");
 
     cy.getDataTest("back-button").click();
 
-    cy.location("pathname").should("eq", "/dashboard");
+    cy.location("pathname").should("eq", "/dashboard/posts");
   });
 });
