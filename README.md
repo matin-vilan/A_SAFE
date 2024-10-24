@@ -67,6 +67,13 @@ Also, end to end testing was done for the project and Cypress was used for this
 
 Please use .env.example to create the .env file.
 
+## Git
+
+Git flow has been done
+All branches were taken from the develop branch and finally a pull request was made to develop.
+The branch names were prepared with an extension.
+The main branch is for deployment to production.
+
 ## Conclusion
 
 I did not use state management in this project because the project was lightweight, but I worked with the state management of Redux, Redux Toolkit, Zustand, and also the context api with and without reduser hook and created a project.
