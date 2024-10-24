@@ -1,5 +1,10 @@
 import { authRequest } from "./fetcher";
-import { DefaultRequest, PostsListResponse, UsersListResponse } from "./types";
+import {
+  DefaultRequest,
+  GoldPriceResponse,
+  PostsListResponse,
+  UsersListResponse,
+} from "./types";
 import { toQueryParams } from "./utils/helpers/general";
 
 export const postsList = async (
@@ -7,9 +12,13 @@ export const postsList = async (
     queryParameters?: unknown;
   } & DefaultRequest
 ): Promise<PostsListResponse[]> =>
-  await authRequest(`/posts` + toQueryParams(args?.queryParameters), {
-    headers: args?.headers,
-  });
+  await authRequest(
+    `/posts` + toQueryParams(args?.queryParameters),
+    {
+      headers: args?.headers,
+    },
+    {}
+  );
 
 export const singlePost = async (
   args: {
@@ -21,7 +30,8 @@ export const singlePost = async (
     `/posts/${args.id}` + toQueryParams(args?.queryParameters),
     {
       headers: args?.headers,
-    }
+    },
+    {}
   );
 
 export const usersList = async (
@@ -34,5 +44,27 @@ export const usersList = async (
     {
       headers: args?.headers,
     },
-    true
+    { isLargeData: true }
+  );
+
+export const goldPrices = async (
+  args?: {
+    queryParameters: {
+      api_key: string;
+      base: string;
+      currencies?: string;
+      start_date: string;
+      end_date: string;
+    };
+  } & DefaultRequest
+): Promise<GoldPriceResponse> =>
+  await authRequest(
+    `/timeframe` + toQueryParams(args?.queryParameters),
+    {
+      headers: {
+        access_key: process.env.NEXT_PUBLIC_GOLD_API_KEY || "",
+        ...args?.headers,
+      },
+    },
+    { isGoldPrice: true }
   );

@@ -81,9 +81,9 @@ export default function Providers({ children }: IProvidersProps) {
             retry: false,
           },
           queries: {
-            refetchOnWindowFocus: false,
-            refetchOnMount: false,
-            staleTime: 5 * 1000,
+            refetchOnWindowFocus: true,
+            refetchOnMount: true,
+            // staleTime: 5 * 1000,
             retry: (failureCount, error: any) => {
               if ([401, 404].includes(error.response?.status)) {
                 return false;
