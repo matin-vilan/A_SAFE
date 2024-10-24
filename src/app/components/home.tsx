@@ -24,6 +24,10 @@ const HomePageContainer = () => {
           are given
         </Typography>
       </Flex>
+      <Typography variant="description" className="text-red-400">
+        To log in manually (without logging in with GitHub), you must enter the
+        username <b>Matin</b> and the password <b>123456</b>.
+      </Typography>
       <Link href="/dashboard/posts">
         <Button>GO TO DASHBOARD</Button>
       </Link>
